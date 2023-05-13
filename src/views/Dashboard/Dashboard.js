@@ -28,6 +28,7 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
+import CodeSnippet from "components/CodeSnippet/CodeSnippet.js";
 
 import { bugs, website, server } from "variables/general.js";
 
@@ -43,6 +44,15 @@ const useStyles = makeStyles(styles);
 
 export default function Dashboard() {
   const classes = useStyles();
+
+  const code = `
+    function greet() {
+      console.log('Hello, World!');
+    }
+
+    greet();
+  `;
+
   return (
     <div>
       <GridContainer>
@@ -56,6 +66,8 @@ export default function Dashboard() {
               <h3 className={classes.cardTitle}>
                 49/50 <small>GB</small>
               </h3>
+              <h1>Code Snippet Example</h1>
+              <CodeSnippet language="javascript" code={code} />
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
