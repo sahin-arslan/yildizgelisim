@@ -1,19 +1,15 @@
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
 // core components
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
 import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
 
-import avatar from "assets/img/faces/marc.jpg";
+import avatar from "assets/img/faces/profil.jpg";
 
 const styles = {
   cardCategoryWhite: {
@@ -41,6 +37,49 @@ export default function UserProfile() {
   return (
     <div>
       <GridContainer>
+        <GridItem xs={12} sm={12} md={12}>
+          <Card profile>
+            <CardAvatar profile>
+              <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                <img src={avatar} alt="..." />
+              </a>
+            </CardAvatar>
+            <CardBody profile>
+              <h6 className={classes.cardTitle}>
+                Credere Art Software Developer
+              </h6>
+              <h4 className={classes.cardTitle}>Şahin Arslan</h4>
+              <p className={classes.description}>
+                I have been working as a Software Developer for several years
+                and currently, I am employed at Architecht. Architecht was
+                established in 2015 as a 100% subsidiary of Kuveyt Turk
+                Participation Bank in Turkey. In my role, I am responsible for
+                programming our proprietary software products, implementing new
+                features, and providing support for our current applications.
+                Additionally, I work as part of a collaborative team to ensure
+                the delivery of high-quality products to our clients. Throughout
+                my career, I have gained experience in developing web-based,
+                desktop, and web service-based applications. I specialize in
+                front-end development using React and the latest Microsoft
+                technologies, and I am constantly exploring innovative concepts
+                for the next evolutionary phase. I possess expertise in
+                Microsoft technologies such as .NET. As a developer, I am known
+                for my creativity, dedication, and strong communication skills.
+                I am always eager to learn new technologies and adapt to
+                emerging trends
+              </p>
+              <Button color="info" round>
+                <a
+                  href="https://www.linkedin.com/in/sahinarslan/"
+                  style={{ color: "#FFF" }}
+                >
+                  Follow Me
+                </a>
+              </Button>
+            </CardBody>
+          </Card>
+        </GridItem>
+        {/*
         <GridItem xs={12} sm={12} md={8}>
           <Card>
             <CardHeader color="primary">
@@ -151,27 +190,7 @@ export default function UserProfile() {
             </CardFooter>
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
-          <Card profile>
-            <CardAvatar profile>
-              <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                <img src={avatar} alt="..." />
-              </a>
-            </CardAvatar>
-            <CardBody profile>
-              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
-              <h4 className={classes.cardTitle}>Alec Thompson</h4>
-              <p className={classes.description}>
-                Don{"'"}t be scared of the truth because we need to restart the
-                human foundation in truth And I love you like Kanye loves Kanye
-                I love Rick Owens’ bed design but the back is...
-              </p>
-              <Button color="primary" round>
-                Follow
-              </Button>
-            </CardBody>
-          </Card>
-        </GridItem>
+        */}
       </GridContainer>
     </div>
   );
