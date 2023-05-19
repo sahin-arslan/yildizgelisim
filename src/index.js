@@ -25,13 +25,12 @@ import Admin from "layouts/Admin.js";
 
 import "assets/css/material-dashboard-react.css?v=1.10.0";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/admin" element={<Admin />} />
-      <Route exact path="/">
-        <Redirect to="/admin/dashboard" />
-      </Route>
+      <Route path="/admin" component={Admin} />
+      <Redirect from="/" to="/admin/dashboard" />
     </Switch>
-  </BrowserRouter>
+  </BrowserRouter>,
+  document.getElementById("root")
 );

@@ -22,6 +22,7 @@ import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import BubbleChart from "@material-ui/icons/BubbleChart";
 import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
+import Check from "@material-ui/icons/Check";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
@@ -30,6 +31,9 @@ import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
 import Maps from "views/Maps/Maps.js";
 import NotificationsPage from "views/Notifications/Notifications.js";
+import AutomaticBatchingComponent from "views/AutomaticBatching/AutomaticBatchingComponent";
+import SuspenseComponent from "views/Suspense/SuspenseComponent";
+import UseTransitionComponent from "views/UseTransition/UseTransitionComponent";
 // core components/views for RTL layout
 
 const dashboardRoutes = [
@@ -42,48 +46,32 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
+    path: "/batching",
+    name: "Automatic Batching",
+    rtlName: "لوحة القيادة",
+    icon: Check,
+    component: AutomaticBatchingComponent,
+    layout: "/admin",
+  },
+  {
+    path: "/suspense",
+    name: "Suspense",
+    rtlName: "لوحة القيادة",
+    icon: Check,
+    component: SuspenseComponent,
+    layout: "/admin",
+  },
+  {
+    path: "/usetransation",
+    name: "Use Transation",
+    rtlName: "لوحة القيادة",
+    icon: Check,
+    component: UseTransitionComponent,
+    layout: "/admin",
+  },
+  {
     path: "/table",
     name: "Table List",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
-    component: TableList,
-    layout: "/admin",
-  },
-  {
-    path: "/table",
-    name: "useTransition",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
-    component: TableList,
-    layout: "/admin",
-  },
-  {
-    path: "/table",
-    name: "useId",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
-    component: TableList,
-    layout: "/admin",
-  },
-  {
-    path: "/table",
-    name: "useInsertionEffect",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
-    component: TableList,
-    layout: "/admin",
-  },
-  {
-    path: "/table",
-    name: "useSyncExteranlStore",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
-    component: TableList,
-    layout: "/admin",
-  },
-  {
-    path: "/table",
-    name: "useInsertionEffect",
     rtlName: "قائمة الجدول",
     icon: "content_paste",
     component: TableList,
