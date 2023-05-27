@@ -34,6 +34,8 @@ import NotificationsPage from "views/Notifications/Notifications.js";
 import AutomaticBatchingComponent from "views/AutomaticBatching/AutomaticBatchingComponent";
 import SuspenseComponent from "views/Suspense/SuspenseComponent";
 import UseTransitionComponent from "views/UseTransition/UseTransitionComponent";
+import UseDeferredValueComponent from "views/UseDeferredValue/UseDeferredValueComponent";
+import UseIdComponent from "views/UseId/UseIdComponent";
 // core components/views for RTL layout
 
 const dashboardRoutes = [
@@ -67,6 +69,22 @@ const dashboardRoutes = [
     rtlName: "لوحة القيادة",
     icon: Check,
     component: UseTransitionComponent,
+    layout: "/admin",
+  },
+  {
+    path: "/usedeferredvalue",
+    name: "Use Deferred Value",
+    rtlName: "لوحة القيادة",
+    icon: Check,
+    component: UseDeferredValueComponent,
+    layout: "/admin",
+  },
+  {
+    path: "/useid",
+    name: "UseId",
+    rtlName: "قائمة الجدول",
+    icon: Check,
+    component: UseIdComponent,
     layout: "/admin",
   },
   {

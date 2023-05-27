@@ -15,22 +15,21 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-
 import React from "react";
-import ReactDOM from "react-dom";
+//import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-
 // core components
 import Admin from "layouts/Admin.js";
-
 import "assets/css/material-dashboard-react.css?v=1.10.0";
 
-ReactDOM.render(
+const app = document.getElementById("root");
+const root = createRoot(app);
+root.render(
   <BrowserRouter>
     <Switch>
       <Route path="/admin" component={Admin} />
       <Redirect from="/" to="/admin/dashboard" />
     </Switch>
-  </BrowserRouter>,
-  document.getElementById("root")
+  </BrowserRouter>
 );

@@ -22,6 +22,7 @@ import CardIcon from "components/Card/CardIcon.js";
 import CardFooter from "components/Card/CardFooter.js";
 import LocalOffer from "@material-ui/icons/LocalOffer";
 import styles from "assets/jss/material-dashboard-react/views/iconsStyle.js";
+import Table from "components/Table/Table.js";
 const useStyles = makeStyles(styles);
 
 export default function SampleComponent() {
@@ -62,30 +63,23 @@ export default function SampleComponent() {
       label: "₺",
     },
   ];
+
+  const MAX_PRODUCT_COUNT = 5000;
+
   function handleSubmit(event) {
     event.preventDefault();
-
     startTransition(() => {
-      console.log("Start");
+      var productList = [];
+      for (let i = 0; i < MAX_PRODUCT_COUNT; i++) {
+        productList.push([i, name, category, description, currency]);
+      }
 
-      setTimeout(() => {
-        setItems((prevItems) => [
-          ...prevItems,
-          {
-            name: name,
-            category: category,
-            description: description,
-            currency: currency,
-          },
-        ]);
-      }, 5000); // Wait for 2 seconds
-      console.log("End");
+      setItems(productList);
+      setName("");
+      setCategory("");
+      setCurrency("");
+      setDescription("");
     });
-
-    setName("");
-    setCategory("");
-    setCurrency("");
-    setDescription("");
   }
 
   return (
@@ -94,7 +88,9 @@ export default function SampleComponent() {
         <GridItem xs={12} sm={12} md={12}>
           <Card chart>
             <CardHeader color="warning">
-              <h5 className={classes.cardTitleWhite}>Air Api</h5>
+              <h5 className={classes.cardTitleWhite}>
+                Tekrarlı Liste Oluşturma Ekranı
+              </h5>
             </CardHeader>
             <CardBody>
               <Box
@@ -107,7 +103,7 @@ export default function SampleComponent() {
               >
                 <div>
                   <TextField
-                    label="Ürün Adı"
+                    label="Adı"
                     id="outlined-size-small"
                     defaultValue=""
                     value={name}
@@ -175,15 +171,19 @@ export default function SampleComponent() {
               </Box>
 
               <div>
-                {isPending ? <p>Adding item...</p> : null}
-                <ul>
-                  {items.map((item, index) => (
-                    <li key={index}>
-                      {item.name} - {item.currency} - {item.description} -{" "}
-                      {item.category}
-                    </li>
-                  ))}
-                </ul>
+                {isPending ? <h3>Adding item...</h3> : null}
+
+                <Table
+                  tableHeaderColor="primary"
+                  tableHead={[
+                    "id",
+                    "Ad",
+                    "Kategori",
+                    "Para Birimi",
+                    "Açıklama",
+                  ]}
+                  tableData={items}
+                />
               </div>
             </CardBody>
             <CardFooter stats>
